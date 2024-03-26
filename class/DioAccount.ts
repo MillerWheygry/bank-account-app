@@ -28,22 +28,13 @@ export abstract class DioAccount {
   getStatus = (): boolean =>{
     return this.status;
   }
-
-  // deposit = (valor: number): void => {
-  //   if(this.validateStatus()){
-  //     console.log('Voce depositou')
-  //   }
-  // }
-
-  public deposit (valor: number): void{
+//nas aulas estava com arrow function, mas tive que mudar pois estava dando erro
+//quando chamava o metodo "deposit" na class NovaDioAcount
+  deposit (valor: number): void{
     this.validateStatus();
     this.balance += valor;
     console.log('Deposito de '+valor+' realizado com sucesso. Novo saldo: '+this.balance);
   }
-
-  // withdraw = (): void => {
-  //   console.log('Voce sacou')
-  // }
 
   withdraw = (valor: number): void => {
     this.validateStatus();
